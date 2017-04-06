@@ -1,4 +1,14 @@
 <resources>
     <string name="app_name">RecyclerViewDemo</string>
     <string name="action_settings">Settings</string>
+
+    <!-- Clistview -->
+    <string name="loosen_refresh">松开立即刷新</string>
+    <string name="refreshing">正在刷新&#8230;</string>
+    <string name="drop_down_refresh">下拉可以刷新</string>
+    <string name="loosen_more">松开立即加载更多</string>
+    <string name="is_All_Items_Loaded">已经全部加载完毕</string>
+    <string name="drop_up_more">上拉可以加载更多</string>
+    <string name="refreshing_new">数据加载中&#8230;</string>
+
 </resources>

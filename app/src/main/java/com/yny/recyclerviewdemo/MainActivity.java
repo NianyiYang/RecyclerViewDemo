@@ -41,8 +41,8 @@ public class MainActivity extends AppCompatActivity {
         mRecyclerView.setLayoutManager(mLayoutManager);
         mAdapter = new Adapter<>(this);
 
-        for (int i = 0; i < 10; i++) {
-            mAdapter.add(i, "");
+        for (int i = 0; i < 20; i++) {
+            mAdapter.add(i, i + "");
         }
 
         mRecyclerView.setAdapter(mAdapter);
@@ -67,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         public void onBindViewHolder(ViewHolder holder, int position) {
-            holder.setView();
+            holder.setView((String) mItems.get(position));
         }
 
         public void add(T t) {
@@ -128,13 +128,12 @@ public class MainActivity extends AppCompatActivity {
 
         ViewHolder(View view) {
             super(view);
-            setContentView(view);
             mText = (TextView) view.findViewById(R.id.text);
             mSubText = (TextView) view.findViewById(R.id.sub_text);
         }
 
-        public void setView() {
-            mText.setText("标题");
+        public void setView(String tag) {
+            mText.setText("标题" + tag);
             mSubText.setText("副标题");
         }
 
