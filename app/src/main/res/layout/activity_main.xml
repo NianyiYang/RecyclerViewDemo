@@ -21,10 +21,27 @@
 
     </android.support.design.widget.AppBarLayout>
 
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/recyclerView"
+    <com.yny.recyclerviewdemo.custom.CanRefreshLayout
+        android:id="@+id/refresh_container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <com.yny.recyclerviewdemo.custom.DYRefreshView
+            android:id="@+id/refresh_header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <com.yny.recyclerviewdemo.custom.DYRefreshView
+            android:id="@+id/refresh_footer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/content_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+    </com.yny.recyclerviewdemo.custom.CanRefreshLayout>
 
 </android.support.design.widget.CoordinatorLayout>

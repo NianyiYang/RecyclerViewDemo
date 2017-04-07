@@ -31,15 +31,6 @@
         android:layout_marginBottom="8dp"
         android:layout_marginTop="8dp">
 
-        <!--<ImageView
-            android:id="@+id/head_arrowImageView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:layout_marginRight="8dp"
-            android:layout_toLeftOf="@+id/head_tipsTextView"
-            android:src="@drawable/list_arrow"/>-->
-
         <TextView
             android:id="@+id/head_tipsTextView"
             android:textSize="14sp"

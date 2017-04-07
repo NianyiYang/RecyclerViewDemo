@@ -11,16 +11,21 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.yny.recyclerviewdemo.custom.CanRefreshLayout;
+
 import java.util.AbstractList;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity {
+import static com.yny.recyclerviewdemo.R.id.refresh_container;
+
+public class MainActivity extends AppCompatActivity implements CanRefreshLayout.OnRefreshListener, CanRefreshLayout.OnLoadMoreListener {
 
     private Toolbar mToolbar;
     private RecyclerView mRecyclerView;
+    private CanRefreshLayout mRefreshContainer;
     private LinearLayoutManager mLayoutManager;
     private Adapter<String> mAdapter;
 
@@ -29,13 +34,20 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         mToolbar = (Toolbar) findViewById(R.id.toolbar);
-        mRecyclerView = (RecyclerView) findViewById(R.id.recyclerView);
+        mRefreshContainer = (CanRefreshLayout) findViewById(refresh_container);
+        mRecyclerView = (RecyclerView) findViewById(R.id.content_view);
         setSupportActionBar(mToolbar);
     }
 
     @Override
     protected void onResume() {
         super.onResume();
+
+        mRefreshContainer.setOnLoadMoreListener(this);
+        mRefreshContainer.setOnRefreshListener(this);
+
+        mRefreshContainer.setMaxFooterHeight(300);
+        mRefreshContainer.setStyle(0, 0); // classic
 
         mLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
         mRecyclerView.setLayoutManager(mLayoutManager);
@@ -46,6 +58,32 @@ public class MainActivity extends AppCompatActivity {
         }
 
         mRecyclerView.setAdapter(mAdapter);
+    }
+
+    @Override
+    public void onRefresh() {
+
+        mRefreshContainer.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                mAdapter.add(0, "refresh");
+                mRefreshContainer.refreshComplete();
+            }
+        }, 1000);
+
+    }
+
+    @Override
+    public void onLoadMore() {
+
+        mRefreshContainer.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                mAdapter.add("more");
+                mRefreshContainer.loadMoreComplete();
+            }
+        }, 1000);
+
     }
 
     public class Adapter<T> extends RecyclerView.Adapter<ViewHolder> {
