@@ -174,7 +174,5 @@ public class MainActivity extends AppCompatActivity implements CanRefreshLayout.
             mText.setText("标题" + tag);
             mSubText.setText("副标题");
         }
-
-
     }
 }
