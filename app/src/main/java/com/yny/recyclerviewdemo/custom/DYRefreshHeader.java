@@ -15,7 +15,7 @@ import com.yny.recyclerviewdemo.R;
  * Created by nianyi.yang on 2017/4/7.
  */
 
-public class DYRefreshView extends FrameLayout implements CanRefresh {
+public class DYRefreshHeader extends FrameLayout implements CanRefresh {
 
     private CharSequence completeStr = "刷新完成";
     private CharSequence refreshingStr = "数据加载中...";
@@ -27,18 +27,18 @@ public class DYRefreshView extends FrameLayout implements CanRefresh {
     private ProgressBar mProgressBar;
 
 
-    public DYRefreshView(Context context) {
+    public DYRefreshHeader(Context context) {
         this(context, null);
     }
 
-    public DYRefreshView(Context context, AttributeSet attrs) {
+    public DYRefreshHeader(Context context, AttributeSet attrs) {
         this(context, attrs, 0);
     }
 
-    public DYRefreshView(Context context, AttributeSet attrs, int defStyleAttr) {
+    public DYRefreshHeader(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
 
-        View v = LayoutInflater.from(getContext()).inflate(R.layout.layout_refresh, null);
+        View v = LayoutInflater.from(getContext()).inflate(R.layout.layout_refresh_header, null);
         addView(v);
     }
 

@@ -322,7 +322,7 @@ public class CanRefreshLayout extends FrameLayout {
 
 
     /**
-     * 设置最大上拉滑动高度
+     * 设置最大下拉滑动高度
      *
      * @param mMaxHeaderHeight int
      */
@@ -333,7 +333,7 @@ public class CanRefreshLayout extends FrameLayout {
     }
 
     /**
-     * 设置最大下拉滑动高度
+     * 设置最大上拉滑动高度
      *
      * @param mMaxFooterHeight int
      */

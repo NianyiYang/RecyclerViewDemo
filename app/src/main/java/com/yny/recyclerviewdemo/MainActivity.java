@@ -12,6 +12,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.yny.recyclerviewdemo.custom.CanRefreshLayout;
+import com.yny.recyclerviewdemo.custom.DYRefreshFooter;
 
 import java.util.AbstractList;
 import java.util.ArrayList;
@@ -21,13 +22,14 @@ import java.util.List;
 
 import static com.yny.recyclerviewdemo.R.id.refresh_container;
 
-public class MainActivity extends AppCompatActivity implements CanRefreshLayout.OnRefreshListener, CanRefreshLayout.OnLoadMoreListener {
+public class MainActivity extends AppCompatActivity implements CanRefreshLayout.OnRefreshListener, DYRefreshFooter.OnLoadMoreListener {
 
     private Toolbar mToolbar;
     private RecyclerView mRecyclerView;
     private CanRefreshLayout mRefreshContainer;
     private LinearLayoutManager mLayoutManager;
     private Adapter<String> mAdapter;
+    private DYRefreshFooter mFooter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +38,7 @@ public class MainActivity extends AppCompatActivity implements CanRefreshLayout.
         mToolbar = (Toolbar) findViewById(R.id.toolbar);
         mRefreshContainer = (CanRefreshLayout) findViewById(refresh_container);
         mRecyclerView = (RecyclerView) findViewById(R.id.content_view);
+        mFooter = (DYRefreshFooter) findViewById(R.id.footer);
         setSupportActionBar(mToolbar);
     }
 
@@ -43,7 +46,6 @@ public class MainActivity extends AppCompatActivity implements CanRefreshLayout.
     protected void onResume() {
         super.onResume();
 
-        mRefreshContainer.setOnLoadMoreListener(this);
         mRefreshContainer.setOnRefreshListener(this);
 
         mRefreshContainer.setMaxFooterHeight(300);
@@ -58,6 +60,9 @@ public class MainActivity extends AppCompatActivity implements CanRefreshLayout.
         }
 
         mRecyclerView.setAdapter(mAdapter);
+
+        mFooter.attachTo(mRecyclerView);
+        mFooter.setLoadMoreListener(this);
     }
 
     @Override
@@ -80,7 +85,7 @@ public class MainActivity extends AppCompatActivity implements CanRefreshLayout.
             @Override
             public void run() {
                 mAdapter.add("more");
-                mRefreshContainer.loadMoreComplete();
+                mFooter.loadMoreComplete();
             }
         }, 1000);
 
