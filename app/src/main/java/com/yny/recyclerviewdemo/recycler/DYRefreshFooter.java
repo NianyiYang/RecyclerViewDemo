@@ -1,4 +1,4 @@
-package com.yny.recyclerviewdemo.custom;
+package com.yny.recyclerviewdemo.recycler;
 
 import android.content.Context;
 import android.support.annotation.AttrRes;
@@ -36,7 +36,7 @@ public class DYRefreshFooter extends FrameLayout {
     private RecyclerView.LayoutManager mLayoutManager;
     private OnLoadMoreListener mOnLoadMoreListener;
 
-    //  给RecyclerView的头部底部加Decoration
+    //  给RecyclerView的底部加Decoration
     private CanItemDecoration mDecoration;
 
     public DYRefreshFooter(@NonNull Context context) {

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.yny.recyclerviewdemo.custom.DYRefreshFooter
+<com.yny.recyclerviewdemo.recycler.DYRefreshFooter
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/footer"
     android:layout_width="match_parent"
@@ -21,4 +21,4 @@
         android:text="没有更多..."
         android:visibility="gone"/>
 
-</com.yny.recyclerviewdemo.custom.DYRefreshFooter>
+</com.yny.recyclerviewdemo.recycler.DYRefreshFooter>

@@ -1,4 +1,4 @@
-package com.yny.recyclerviewdemo.custom;
+package com.yny.recyclerviewdemo.recycler;
 
 /**
  * Copyright 2016 canyinghao

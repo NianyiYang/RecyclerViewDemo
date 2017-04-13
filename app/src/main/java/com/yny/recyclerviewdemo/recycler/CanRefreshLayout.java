@@ -1,4 +1,4 @@
-package com.yny.recyclerviewdemo.custom;
+package com.yny.recyclerviewdemo.recycler;
 
 import android.content.Context;
 import android.content.res.TypedArray;

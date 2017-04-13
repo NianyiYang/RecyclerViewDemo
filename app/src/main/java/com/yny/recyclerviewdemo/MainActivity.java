@@ -11,8 +11,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.yny.recyclerviewdemo.custom.CanRefreshLayout;
-import com.yny.recyclerviewdemo.custom.DYRefreshFooter;
+import com.yny.recyclerviewdemo.recycler.CanRefreshLayout;
+import com.yny.recyclerviewdemo.recycler.DYRefreshFooter;
 
 import java.util.AbstractList;
 import java.util.ArrayList;
@@ -48,7 +48,7 @@ public class MainActivity extends AppCompatActivity implements CanRefreshLayout.
 
         mRefreshContainer.setOnRefreshListener(this);
 
-        mRefreshContainer.setMaxFooterHeight(300);
+        mRefreshContainer.setMaxFooterHeight(100);
         mRefreshContainer.setStyle(0, 0); // classic
 
         mLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
@@ -84,7 +84,11 @@ public class MainActivity extends AppCompatActivity implements CanRefreshLayout.
         mRefreshContainer.postDelayed(new Runnable() {
             @Override
             public void run() {
-                mAdapter.add("more");
+                mAdapter.add("more1");
+                mAdapter.add("more2");
+                mAdapter.add("more3");
+                mAdapter.add("more4");
+                mAdapter.add("more5");
                 mFooter.loadMoreComplete();
             }
         }, 1000);

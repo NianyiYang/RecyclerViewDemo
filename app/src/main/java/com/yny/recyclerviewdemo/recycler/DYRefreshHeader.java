@@ -1,4 +1,4 @@
-package com.yny.recyclerviewdemo.custom;
+package com.yny.recyclerviewdemo.recycler;
 
 import android.content.Context;
 import android.util.AttributeSet;
@@ -12,6 +12,7 @@ import android.widget.TextView;
 import com.yny.recyclerviewdemo.R;
 
 /**
+ * 下拉刷新视图
  * Created by nianyi.yang on 2017/4/7.
  */
 
