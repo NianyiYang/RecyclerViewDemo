@@ -10,5 +10,9 @@
     <string name="is_All_Items_Loaded">已经全部加载完毕</string>
     <string name="drop_up_more">上拉可以加载更多</string>
     <string name="refreshing_new">数据加载中&#8230;</string>
+    <string name="title_activity_coordinator">CoordinatorActivity</string>
+
+    <string name="header_behavior">com.yny.recyclerviewdemo.behavior.HeaderBehavior</string>
+    <string name="scrolling_behavior">com.yny.recyclerviewdemo.behavior.ScrollingBehavior</string>
 
 </resources>

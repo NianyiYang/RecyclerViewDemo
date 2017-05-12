@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
+    <item name="scroll_header" type="id"/>
+
     <item name="content_view" type="id"/>
     <item name="refresh_header" type="id"/>
     <item name="refresh_footer" type="id"/>

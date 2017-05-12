@@ -2,6 +2,7 @@
 <com.yny.recyclerviewdemo.recycler.DYRefreshFooter
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/footer"
+    android:background="@color/colorPrimary"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:padding="16dp">

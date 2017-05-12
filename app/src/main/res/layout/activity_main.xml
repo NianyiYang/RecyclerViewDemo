@@ -1,31 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.design.widget.CoordinatorLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.yny.recyclerviewdemo.MainActivity">
 
-    <android.support.design.widget.AppBarLayout
+    <!--<ImageView
+        android:id="@+id/scrolling_header"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:theme="@style/AppTheme.AppBarOverlay">
+        android:layout_height="200dp"
+        android:background="@color/colorPrimary"
+        android:scaleType="centerCrop"/>
 
-        <android.support.v7.widget.Toolbar
-            android:id="@+id/toolbar"
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        app:layout_behavior="@string/header_behavior">
+
+        <EditText
+            android:id="@+id/et_search"
             android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="?attr/colorPrimary"
-            app:popupTheme="@style/AppTheme.PopupOverlay"/>
+            android:layout_height="40dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/shape_home_search_frame"
+            android:drawableLeft="@drawable/search_s"
+            android:drawablePadding="10dp"
+            android:drawableStart="@drawable/search_s"
+            android:focusable="false"
+            android:hint="搜索资讯 数据或研究"
+            android:imeOptions="actionSearch"
+            android:lines="1"
+            android:paddingLeft="10dp"
+            android:textColor="#676767"
+            android:textColorHint="#c7c7c7"
+            android:textSize="14sp"/>
 
-    </android.support.design.widget.AppBarLayout>
+    </RelativeLayout>-->
 
     <com.yny.recyclerviewdemo.recycler.CanRefreshLayout
         android:id="@+id/refresh_container"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+        android:layout_height="wrap_content">
+        <!--app:layout_behavior="@string/scrolling_behavior"-->
 
         <com.yny.recyclerviewdemo.recycler.DYRefreshHeader
             android:id="@+id/refresh_header"

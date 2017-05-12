@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -24,7 +23,7 @@ import static com.yny.recyclerviewdemo.R.id.refresh_container;
 
 public class MainActivity extends AppCompatActivity implements CanRefreshLayout.OnRefreshListener, DYRefreshFooter.OnLoadMoreListener {
 
-    private Toolbar mToolbar;
+    //private Toolbar mToolbar;
     private RecyclerView mRecyclerView;
     private CanRefreshLayout mRefreshContainer;
     private LinearLayoutManager mLayoutManager;
@@ -35,11 +34,11 @@ public class MainActivity extends AppCompatActivity implements CanRefreshLayout.
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        mToolbar = (Toolbar) findViewById(R.id.toolbar);
+        //mToolbar = (Toolbar) findViewById(R.id.toolbar);
         mRefreshContainer = (CanRefreshLayout) findViewById(refresh_container);
         mRecyclerView = (RecyclerView) findViewById(R.id.content_view);
         mFooter = (DYRefreshFooter) findViewById(R.id.footer);
-        setSupportActionBar(mToolbar);
+        //setSupportActionBar(mToolbar);
     }
 
     @Override
@@ -48,7 +47,7 @@ public class MainActivity extends AppCompatActivity implements CanRefreshLayout.
 
         mRefreshContainer.setOnRefreshListener(this);
 
-        mRefreshContainer.setMaxFooterHeight(100);
+        //mRefreshContainer.setMaxFooterHeight(300);
         mRefreshContainer.setStyle(0, 0); // classic
 
         mLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);

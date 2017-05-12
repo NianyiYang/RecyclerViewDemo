@@ -255,7 +255,7 @@ public class DYRefreshFooter extends FrameLayout {
     }
 
     /**
-     * 计算距离的方法
+     * 计算Footer距离底部的方法
      *
      * @param isTop boolean
      * @return int
@@ -263,7 +263,7 @@ public class DYRefreshFooter extends FrameLayout {
     private int calculateTranslationXY(boolean isTop) {
         if (!isTop) {
             int offset = getScrollOffset();
-            int base = getScrollRange() - getSize();
+            int base = getScrollRange() - getSize() - 300;
             return base - offset;
 
         } else {
