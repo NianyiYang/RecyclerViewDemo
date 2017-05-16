@@ -100,6 +100,7 @@ public class DYRefreshFooter extends FrameLayout {
      * @param recyclerView RecyclerView
      */
     public void attachTo(@NonNull final RecyclerView recyclerView) {
+
         if (recyclerView.getLayoutManager() == null) {
             throw new IllegalStateException("no LayoutManager.");
         }
@@ -111,10 +112,11 @@ public class DYRefreshFooter extends FrameLayout {
 
         isAttached = true;
 
-        if (mDecoration != null) {
+        if (mDecoration == null) {
+            mDecoration = new CanItemDecoration(mLayoutManager).setIsHeader(false);
+        } else {
             recyclerView.removeItemDecoration(mDecoration);
         }
-        mDecoration = new CanItemDecoration(mLayoutManager).setIsHeader(false);
         recyclerView.addItemDecoration(mDecoration);
 
         recyclerView.removeOnScrollListener(mOnScrollListener);
@@ -263,7 +265,7 @@ public class DYRefreshFooter extends FrameLayout {
     private int calculateTranslationXY(boolean isTop) {
         if (!isTop) {
             int offset = getScrollOffset();
-            int base = getScrollRange() - getSize() - 300;
+            int base = getScrollRange() - getSize();
             return base - offset;
 
         } else {

@@ -38,6 +38,7 @@ public class MainActivity extends AppCompatActivity implements CanRefreshLayout.
         mRefreshContainer = (CanRefreshLayout) findViewById(refresh_container);
         mRecyclerView = (RecyclerView) findViewById(R.id.content_view);
         mFooter = (DYRefreshFooter) findViewById(R.id.footer);
+        mLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
         //setSupportActionBar(mToolbar);
     }
 
@@ -49,8 +50,6 @@ public class MainActivity extends AppCompatActivity implements CanRefreshLayout.
 
         //mRefreshContainer.setMaxFooterHeight(300);
         mRefreshContainer.setStyle(0, 0); // classic
-
-        mLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
         mRecyclerView.setLayoutManager(mLayoutManager);
         mAdapter = new Adapter<>(this);
 
